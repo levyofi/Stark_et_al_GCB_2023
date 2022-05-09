@@ -1,12 +1,17 @@
 library(lubridate)
 library(ggplot2)
 setwd("C:/Users/gavin/Desktop/PhD/Chapters 2&3 - Modelling Lizard's Activity Time")
+##########Upload Data###############
 data = read.csv("new_winter_microclimate_with_mesalina_temps 06.04.22.csv", header = T)
+##########Select sepcific Dates for Analysis###########
 data = data[data$Date %in% c("29/01/2022", "30/01/2022", "31/01/2022"),]
+##########Set date and time using lubridate################# 
 data$dt = dmy_hm(data$round_dt)
 data$day = difftime(data$dt,dmy("29/01/2022"),units="days") 
+##########Save new file for folder###############
 write.csv(data, file = paste("specific_winter_microclimate_with_mesalina_temps 6.4.2022",today(), "csv", sep="." ), row.names = FALSE)
 new_data <- read.csv(file.choose())
+############Figures################################
 data$Active_location <- factor(data$Active_location, 
                                levels=c("open", "shade", "large rock",
                                         "medium rock", "small rock", 
