@@ -1,8 +1,7 @@
 # Author: Ofir & Gavin
 library(tidyverse)
 ###############################################################################
-Data <- read.csv("new_winter_microclimate_iButton.csv")
-Data <- read.csv("summer_microclimate_all.csv")
+Data <- read.csv("Data.csv")
 Data <- na.omit(Data)
 
 #run only on rock, assuming the temperature represent the temperature in the shade
