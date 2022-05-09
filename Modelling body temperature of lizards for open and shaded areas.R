@@ -1,10 +1,10 @@
 # Author: Ofir & Gavin
 library(tidyverse)
 ###############################################################################
-Data <- read.csv("Data.csv")
+Data <- read.csv("Combined_Meterological_iButton_temperatues_Data.csv")
 Data <- na.omit(Data)
 
-#run only on rock, assuming the temperature represent the temperature in the shade
+#For shaded areas: run temps under medium rock, assuming the temperature represent the temperature in the shade
 #Data1 = Data1[Data1$Object=="Rock" & Data1$Size=="Medium",]
 #print(Data1)
 alpha_L = 0.65 # thermal absoptivity, using golden spiny mice's data for the Messalina gutulatta
