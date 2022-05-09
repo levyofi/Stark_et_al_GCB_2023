@@ -5,15 +5,17 @@ library(ggplot2)
 #Upload summer data:
 meterological_files <- "C:/Users/gavin/Desktop/PhD/Chapters 2&3 - Modelling Lizard's Activity Time"
 setwd(meterological_files)
-Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv")
 
-#Vtmean = preferred body temperature of Messalina bahaeldini:
-Vtmin <- 28.66
-Vtmax <- 37.30
-Vtmean <- 33.39
+####First let's analyzed Summer####
+###########Upload data###############
+Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv")
+##############Insert preferred body temperatures (min,max,mean) of specific species: Mesalina bahaeldini############## 
+Vtmin <- 28.66 #Vtmin = minimum preferred body temperature of lizard extracted from the preferred bT experiment 
+Vtmax <- 37.30 #Vtmax = maximum preferred body temperature of lizard extracted from the preferred bT experiment 
+Vtmean <- 33.39 #Vtmean = average preferred body temperature of lizard extracted from the preferred bT experiment 
+
 ##Calculations##:
-#Check activity of lizard if it is possible in the sun 
-#by calculating the Temperature distance in the sun from Vtmean:
+##Check if the activity of the lizard is possible in the open area (i.e. lizard exposed to the sun) by calculating the Temperature distance in the sun from Vtmean:
 Data_summer$active_sun <- "No"
 Data_summer[Data_summer$ToSun>Vtmin & Data_summer$ToSun<Vtmax, ]$active_sun = "Yes"
 Data_summer$distance_from_vtmean_sun = Data_summer$ToSun-Vtmean
