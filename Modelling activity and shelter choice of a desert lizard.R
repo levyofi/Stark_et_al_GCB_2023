@@ -2,7 +2,7 @@ library(dplyr)
 library(plyr)
 library(reshape2)
 library(ggplot2)
-#Upload summer data:
+####Set working directory#### 
 meterological_files <- "C:/Users/gavin/Desktop/PhD/Chapters 2&3 - Modelling Lizard's Activity Time"
 setwd(meterological_files)
 
