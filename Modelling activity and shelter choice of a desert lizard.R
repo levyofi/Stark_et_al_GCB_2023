@@ -8,53 +8,55 @@ setwd(meterological_files)
 
 ####First let's analyzed Summer####
 ###########Upload data###############
-Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv")
+Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv") #Filter night time by using solar radiation column (>2.5 day)#
+
 ##############Insert preferred body temperatures (min,max,mean) of specific species: Mesalina bahaeldini############## 
 Vtmin <- 28.66 #Vtmin = minimum preferred body temperature of lizard extracted from the preferred bT experiment 
 Vtmax <- 37.30 #Vtmax = maximum preferred body temperature of lizard extracted from the preferred bT experiment 
 Vtmean <- 33.39 #Vtmean = average preferred body temperature of lizard extracted from the preferred bT experiment 
 
 ##Calculations##:
-##Check if the activity of the lizard is possible in the open area (i.e. lizard exposed to the sun) by calculating the Temperature distance in the sun from Vtmean:
+##Check if the activity of the lizard is possible in the open area (i.e. lizard exposed to the sun) 
+##by calculating the Temperature distance in the sun from Vtmean:
 Data_summer$active_sun <- "No"
 Data_summer[Data_summer$ToSun>Vtmin & Data_summer$ToSun<Vtmax, ]$active_sun = "Yes"
 Data_summer$distance_from_vtmean_sun = Data_summer$ToSun-Vtmean
 
-#Check activity of lizard if it is possible in the shade 
-#by calculating the Temperature distance in the shade from Vtmean:
+##Check if the activity of the lizard is possible in the shaded area (i.e. lizard is under shade created by a tree or a rock) 
+##by calculating the Temperature distance in the shade from Vtmean:
 Data_summer$active_shade <- "No"
 Data_summer[Data_summer$ToShade>Vtmin & Data_summer$ToShade<Vtmax, ]$active_shade = "Yes"
 Data_summer$distance_from_vtmean_shade = Data_summer$ToShade-Vtmean
 
-#convert to absolute values:
+#Convert the distance values to absolute numbers:
 Data_summer$absolute_distance_sun <- abs(Data_summer$distance_from_vtmean_sun)
 Data_summer$absolute_distance_shade <- abs(Data_summer$distance_from_vtmean_shade)
 
-#choose activity location
+#Choose the activity location for a lizard: open or shade:
 Data_summer$Active_location = ifelse(Data_summer$absolute_distance_sun>Data_summer$absolute_distance_shade, "shade", "open" )
 
-######################################################################use group by=
-#Check activity of lizard is possible in the rock or bush (by size) by calculating the Temperature distance of rock/bush from Vtmean:
+########Now let's add another layer of complexity by inserting two more elements: rocks and bushes in different sizes########
+#First, check if the activity of the lizard is possible under the rock or bush (by size) by calculating the Temperature distance of rock/bush from Vtmean:
 Data_summer$active_rock_bush <- "No"
 Data_summer[Data_summer$iButton_Temp>Vtmin & Data_summer$iButton_Temp<Vtmax, ]$active_rock_bush = "Yes"
 Data_summer$distance_from_vtmean_rock_bush = Data_summer$iButton_Temp-Vtmean
 Data_summer$absolute_distance_from_vtmean_rock_bush <- abs(Data_summer$distance_from_vtmean_rock_bush)
 Data_summer <- ddply(Data_summer, .(round_dt), mutate,
                minimum_absolute_distance_from_vtmean_rock_bush = min(absolute_distance_from_vtmean_rock_bush))
-#Calculate the location of the lizard, outside in the sun or in the shade or not active under rock or bush:
+
+#Than, calculate the location of the lizard, Whethert the lizard is outside in the sun or in the shade or is it under a rock or bush:
 Data_summer<- filter(Data_summer, Data_summer$active_sun=="Yes" |  Data_summer$active_shade=="Yes" | absolute_distance_from_vtmean_rock_bush == minimum_absolute_distance_from_vtmean_rock_bush)
 Data_summer = unique(Data_summer)
 Data_summer$Active_location = ifelse(Data_summer$active_sun=="Yes" |  Data_summer$active_shade=="Yes", Data_summer$Active_location, paste(Data_summer$Object, Data_summer$Size, sep="-"))
+####Write and save the final dataset for analysis & visualization of the model####
+write.table(Data_summer, file="summer_data_final.csv", row.names = F, col.names = T, sep=",")
 
-write.table(Data_summer, file="summer_microclimate_with_mesalina_temps 06.04.22.csv", row.names = F, col.names = T, sep=",")
-
-# 1) First filter night time by using solar radiation column (>2.5 day), ANALYSIS ONLY ON DAYTIME HOURS!!!.
-# 2)Create table for round_dt and activity location 2) use unique function, and then use proportion code below
-Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv")
-Data_summer_new <- Data_summer[,c("round_dt","Active_location")] 
-Data_summer_new = unique(Data_summer_new)
-
-Data_summer_prop <- prop.table(table(Data_summer_new$Active_location))
+###Calculations of the proportions for the activity of lizards in each location####
+Data_summer <- read.csv("summer_data_final.csv") #upload data
+Data_summer_new <- Data_summer[,c("round_dt","Active_location")] #take only the relevent columns of the figure
+Data_summer_new = unique(Data_summer_new) #eliminate or delete any duplicate values
+#create table with proportions for activity location
+Data_summer_prop <- prop.table(table(Data_summer_new$Active_location)) 
 Data_summer_prop <- data.frame(Data_summer_prop)
 colnames(Data_summer_prop)[1] <- "Active_location"
 colnames(Data_summer_prop)[2] <- "Percentage"
