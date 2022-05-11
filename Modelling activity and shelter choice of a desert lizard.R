@@ -116,6 +116,22 @@ colnames(Data_winter_prop)[1] <- "Active_location"
 colnames(Data_winter_prop)[2] <- "Percentage"
 Data_winter_prop$Round_percentage <- Data_winter_prop$Percentage*100
 
+######Calculating the propotions of location choices while removing rock/bushes######
+###upload winter/summer dataset###
+Data_summer/winter <- read.csv(file.choose())
+No_bush_Data_summer <- Data_summer_new[!Data_summer_new$Active_location=='Bush',] #removing all rows with bushes
+No_rock_Data_summer <- Data_summer_new[!Data_summer_new$Active_location=='Rock',] #removing all rows with rocks
+###recreate datatable with proportions without bush (can be used in the same manner when removing rocks)###
+No_bush_Data_summer_new <- No_bush_Data_summer[,c("round_dt","Active_location_size")]
+No_bush_Data_summer_new = unique(No_bush_Data_summer_new) 
+#create table with proportions for activity location
+No_bush_Data_summer_new_prop <- prop.table(table(No_bush_Data_summer_new$Active_location_size)) 
+No_bush_Data_summer_new_prop <- data.frame(No_bush_Data_summer_new_prop)
+colnames(No_bush_Data_summer_new_prop)[1] <- "Active_location"
+colnames(No_bush_Data_summer_new_prop)[2] <- "Percentage"
+No_bush_Data_summer_new_prop$Round_percentage <- No_bush_Data_summer_new_prop$Percentage*100
+
+################################################Figures################################################
 ########Creating figure for 4 locations choices by lizard: open; underground; rock; bush#####################
 library(miscTools)
 Data_summer/winter_prop_full <- data.frame(matrix(ncol = 2, nrow = 4))
