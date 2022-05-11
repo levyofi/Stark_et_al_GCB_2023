@@ -7,10 +7,10 @@ meterological_files <- "C:/Users/gavin/Desktop/PhD/Chapters 2&3 - Modelling Liza
 setwd(meterological_files)
 
 ####First let's analyzed Summer####
-###########Upload data###############
+###########Upload summer data###############
 Data_summer <- read.csv("summer_microclimate_with_mesalina_temps 09.12.21.csv") #Filter night time by using solar radiation column (>2.5 day)#
 
-##############Insert preferred body temperatures (min,max,mean) of specific species: Mesalina bahaeldini############## 
+##############Insert preferred body temperatures (min,max,mean) during summer experiment of specific species: Mesalina bahaeldini############## 
 Vtmin <- 28.66 #Vtmin = minimum preferred body temperature of lizard extracted from the preferred bT experiment 
 Vtmax <- 37.30 #Vtmax = maximum preferred body temperature of lizard extracted from the preferred bT experiment 
 Vtmean <- 33.39 #Vtmean = average preferred body temperature of lizard extracted from the preferred bT experiment 
@@ -62,29 +62,23 @@ colnames(Data_summer_prop)[1] <- "Active_location"
 colnames(Data_summer_prop)[2] <- "Percentage"
 Data_summer_prop$Round_percentage <- Data_summer_prop$Percentage*100
 
-###############################################################################################################################
-#Upload winter data:
-library(dplyr)
-library(plyr)
-library(reshape2)
+####################For the winter season the process is similar####################
 #Upload winter data:
 meterological_files <- "C:/Users/gavin/Desktop/PhD/Chapters 2&3 - Modelling Lizard's Activity Time/new winter data for model 2022"
 setwd(meterological_files)
 Data_winter <- read.csv(file.choose())
 
-#Vtmean = preferred body temperature of Messalina bahaeldini:
+##############Insert preferred body temperatures (min,max,mean) during winter experiment of specific species: Mesalina bahaeldini############## 
 Vtmin <- 25.3
 Vtmax <- 36.3
 Vtmean <- 31.7
 ##Calculations##:
-#Check activity of lizard if it is possible in the sun 
-#by calculating the Temperature distance in the sun from Vtmean:
+#Check activity of lizard if it is possible in the sun by calculating the Temperature distance in the sun from Vtmean:
 Data_winter$active_sun <- "No"
 Data_winter[Data_winter$ToSun>Vtmin & Data_winter$ToSun<Vtmax, ]$active_sun = "Yes"
 Data_winter$distance_from_vtmean_sun = Data_winter$ToSun-Vtmean
 
-#Check activity of lizard if it is possible in the shade 
-#by calculating the Temperature distance in the shade from Vtmean:
+#Check activity of lizard if it is possible in the shade  by calculating the Temperature distance in the shade from Vtmean:
 Data_winter$active_shade <- "No"
 Data_winter[Data_winter$ToShade>Vtmin & Data_winter$ToShade<Vtmax, ]$active_shade = "Yes"
 Data_winter$distance_from_vtmean_shade = Data_winter$ToShade-Vtmean
@@ -109,30 +103,29 @@ Data_winter<- filter(Data_winter, Data_winter$active_sun=="Yes" |  Data_winter$a
 Data_winter = unique(Data_winter)
 Data_winter$Active_location = ifelse(Data_winter$active_sun=="Yes" |  Data_winter$active_shade=="Yes", Data_winter$Active_location, paste(Data_winter$Object, Data_winter$Size, sep="-"))
 
-write.table(Data_winter, file="new_winter_microclimate_with_mesalina_temps 06.04.22.csv", row.names = F, col.names = T, sep=",")
-######################################################################################################################################################################################################
-Data_winter <- read.csv("For figure 5 - no rocks during winter 28.3.22.csv")
-Data_summer <- read.csv("For figure 5 - no rocks during summer 28.3.22.csv")
+write.table(Data_winter, file="new_winter_microclimate_with_mesalina_temps.csv", row.names = F, col.names = T, sep=",")
 
+###Calculations of the proportions for the activity of lizards in each location####
 Data_winter_new <- Data_winter[,c("Time_Date","Active_location")] 
-Data_summer_new = unique(Data_summer)
-write.table(Data_summer_new, file="newest_summer_microclimate_with_mesalina_temps 27.03.22.csv", row.names = F, col.names = T, sep=",")
-
-Data_winter_prop <- prop.table(table(Data_winter$Active_location))
+Data_winter_new = unique(Data_winter_new)
+write.table(Data_winter_new, file="proportion_dataset_winter.csv", row.names = F, col.names = T, sep=",")
+#create table with proportions for activity location
+Data_winter_prop <- prop.table(table(Data_winter_new$Active_location))
 Data_winter_prop <- data.frame(Data_winter_prop)
 colnames(Data_winter_prop)[1] <- "Active_location"
 colnames(Data_winter_prop)[2] <- "Percentage"
 Data_winter_prop$Round_percentage <- Data_winter_prop$Percentage*100
-########Preparing for figures#####################
+
+########Creating figure for 4 locations choices by lizard: open; underground; rock; bush#####################
 library(miscTools)
-Data_winter_prop_full <- data.frame(matrix(ncol = 2, nrow = 4))
-colnames(Data_winter_prop_full) <- c('Active_location', 'Round_percentage')
+Data_summer/winter_prop_full <- data.frame(matrix(ncol = 2, nrow = 4))
+colnames(Data_summer/winter_prop_full) <- c('Active_location', 'Round_percentage')
 rocks <- 1.812191+5.930807+5.766063
 bushes <- 9.829764+25.974739+4.887424
 open <- 32.454695
 shade <- 13.344316
-Data_winter_prop_full$Active_location <- c("Rocks", "Bushes", "Open", "shade")
-Data_winter_prop_full$Round_percentage <- c(rocks,bushes,open,shade)
+Data_summer/winter_prop_full$Active_location <- c("Rocks", "Bushes", "Open", "shade")
+Data_summer/winter_prop_full$Round_percentage <- c(rocks,bushes,open,shade)
 ##################################################
 #Figures:
 library(lubridate)
