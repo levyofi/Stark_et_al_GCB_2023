@@ -1,6 +1,5 @@
 **Looking  for some shade? The importance of rocks compared to vegetation as a thermoregulatory refuge for desert lizards**
 
-**Integrative and Comparative Biology Journal**
 
 _Gavin Stark, Liang Ma, Zhi-Gao Zeng, Wei-guo Du, Ofir Levy_
 
