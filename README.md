@@ -1,4 +1,4 @@
-# **Looking  for some shade? The importance of rocks compared to vegetation as a thermoregulatory refuge for desert lizards**
+# The critical role of microhabitat diversity in extreme environments
 
 
 _Gavin Stark, Liang Ma, Zhi-Gao Zeng, Wei-guo Du, Ofir Levy_
