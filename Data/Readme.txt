@@ -1,2 +1,2 @@
-Here are all the datasets used in for the modelling and visuallzing in the manuscript:
-"Looking  for some shade? The importance of rocks compared to vegetation as a thermoregulatory refuge for desert lizards"
+Here are all the datasets used for the modelling and visualization in this study:
+"# The critical role of microhabitat diversity in extreme environments"
