@@ -13,8 +13,8 @@ We calculate the operative temperature of lizards in the shade and open using th
 ### Stage 3 - calculating proportions of microhabitat selection
 
 1. No habitat loss - We used the newly generated datasets `summer_microclimate_with_mesalina_temps 11.05.2022.csv` and `new_winter_microclimate_with_mesalina_temps 11.05.2022.csv` and the code `Modelling activity and shelter choice of a desert lizard.R`.  
-2. Vegetation cover loss - In the end of the above code, there are two lines of codes
-3. Rock cover loss - 
+2. Vegetation cover loss - In the end of the above code, go to line 122 and remove all bushes, then rerun the final part of the code (before the figure section) and visualized the effect of vegetation loss on microhabitat selection by lizards.
+3. Rock cover loss -  In the end of the above code, go to line 123 and remove all bushes, then rerun the final part of the code (before the figure section) and visualized the effect of vegetation loss on microhabitat selection by lizards.
 
 ## Climate change
 
