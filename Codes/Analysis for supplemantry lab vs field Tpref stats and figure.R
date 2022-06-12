@@ -4,7 +4,7 @@ library(dplyr)
 library(nlme)
 options(scipen = 999)
 setwd('C:/Users/gavin/Desktop/PhD/Chapter 2 -Microhabitat and Thermoregulation/Temperature preference experiment/Thermal Pictures and Data of M. bahaeldini')
-Data <- read.csv()
+Data <- read.csv('Data of TPref~origin+season - 12.6.22.csv')
 gls.model <- gls(Body_Temperature ~ Temp_Origin*Season, data = Data, weights = varIdent(form =~1|Temp_Origin*Season)) 
 summary(gls.model)
 
