@@ -3,7 +3,7 @@ library(dplyr)
 library(tidyr)
 options(scipen = 999)
 setwd('C:/Users/gavin/Desktop/PhD/Chapter 2 -Microhabitat and Thermoregulation')
-Data <- read.csv('Winter data for ground temperature.csv'/'Summer data for ground temperature.csv'/)
+Data <- read.csv('Winter data for ground temperature.csv'/'Summer data for ground temperature.csv'/'Summer_microclimate (June-September 2020).csv'/'Winter_microclimate (December-Feburary 2020).csv ')
 #Create table of mean&min&max values for the raw table:
 Data <- tidyr::separate(Data, Time_Date, c("Date", "Time"), sep = " ",remove = FALSE) #separates the time and date column
 Max_ibutton_temp <- aggregate(iButton_Temp ~ Date+Object+Size, data = Data, max)#create maximum values according to object and size
