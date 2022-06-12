@@ -4,7 +4,7 @@ library(tidyverse)
 library(humidity)
 
 #### Set model parameters ####
-alpha_L = 0.65 # thermal absoptivity, using golden spiny mice's data for the Messalina gutulatta
+alpha_L = 0.8 # solar absoptivity, using golden spiny mice's data for the Messalina gutulatta
 h_L=10.45 #convective heat transfetr ceofficient (W m-2 K-1) (Fei et al. 2012, J Ther Biol, 37: 56-64, Porter et al. 1973?)
 epsilon_lizard=0.95 # emissivity of lizard's skin
 K_lizard = 0.5 #thermal conductivity (W K-1 m-1)
@@ -46,7 +46,6 @@ calculate_To <- function(TAH, Tsurface, SWDOWN, GLW, shade, To){
   
   #net longwave radiation
   A_up = 0.6*A_L #area of the skin facing toward the sky
-  epsilon_ac= 9.2*10^-6*(Ta)^2 # (10.11) clear sky emissivity
   print(paste("solar:", dQ_solar))
   for (i in 1:(600/dt)) { # 10 minutes as the resolution of the data
     dQ_IR = epsilon_lizard*A_downs*sigma*(Ts^4. - To^4.) + epsilon_lizard*A_up*((1-shade)*lw + shade*sigma*TaV^4.) - epsilon_lizard*A_up*sigma*To^4.
