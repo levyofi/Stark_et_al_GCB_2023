@@ -3,8 +3,8 @@
 library(lubridate)
 library(ggplot2)
 ############################################Figure 2 START############################################
-Data_summer <-read.csv(file.choose())
-Data_winter <-read.csv(file.choose())
+Data_summer <-read.csv('Data/Summer_microhabitat_selection-For Figure 2.csv')
+Data_winter <-read.csv('Data/winter_microhabitat_selection-For Figure 2.csv')
 
 tiff(file="Figure 2A-Summer.tiff", width=3800, height=2500, res=300, compression="lzw")
 p<-ggplot(data=Data_summer, aes(x=Active_location, y=Round_Percentage)) +
