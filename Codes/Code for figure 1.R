@@ -1,27 +1,5 @@
-library(ape)
-library(phytools)
-library(plyr)
-library(car)
-library(fmsb)
-library(FSA)
-library(ggplot2)
-library(caper)
-library(lmtest)
-library(MASS)
-library(mglmn)
 library(lubridate)
-library(MASS)
-library(lubridate)
-library(rayshader)
-library("lme4")
-library(MuMIn)
-library(Rmisc)
-library(Hmisc)
 library(dplyr)
-library(Epi)
-library(statsr)
-library(dplyr)
-options(scipen = 999)
 setwd('C:/Users/gavin/Desktop/PhD/Chapter 2 -Microhabitat and Thermoregulation')
 Data <- read.csv(file.choose(),header=T)
 Data2 <- read.csv(file.choose(),header=T)
@@ -108,7 +86,7 @@ d1 <- d+theme_bw()+theme(axis.text=element_text(face='bold', size=20),
                          axis.text.x=element_text(face='bold',size=20)
                          ,axis.title.x=element_text(face='bold', size=20),
                          axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  labs(x="Time of the day", y="Ground temperature (캜)")+
+  labs(x="Time of the day", y="Ground temperature (째C)")+
   scale_y_continuous(limits = c(15, 35))+scale_x_continuous(limits = c(8, 16), labels = c("8:00AM","10:00AM","12:00PM","14:00PM","16:00PM"))
 d2 <- d1+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+ theme(legend.position = "none")
 d2
@@ -125,7 +103,7 @@ v1 <- v+theme_bw()+theme(axis.text=element_text(face='bold', size=20),
                          axis.text.x=element_text(face='bold',size=20)
                          ,axis.title.x=element_text(face='bold', size=20),
                          axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  labs(x="Time of the day", y="Ground temperature (캜)")+
+  labs(x="Time of the day", y="Ground temperature (째C)")+
   scale_y_continuous(limits = c(30, 40))+scale_x_continuous(limits = c(8, 18), labels = c("7:30","10:00","12:30","15:00","17:30"))
 v2 <- v1+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())+ theme(legend.position = "none")
 library(ggpubr)
@@ -159,7 +137,7 @@ n1 <- n+theme_bw()+theme(axis.text=element_text(face='bold', size=20),
                          axis.text.x=element_text(face='bold',size=20)
                          ,axis.title.x=element_text(face='bold', size=20),
                          axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  labs(x="Time of the day", y="Ground temperature (캜)")+
+  labs(x="Time of the day", y="Ground temperature (째C)")+
   scale_y_continuous(limits = c(30, 45))+scale_x_continuous(limits = c(8, 18), labels = c("7:30","10:00","12:30","15:00","17:30"))
 n1+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 
@@ -170,7 +148,7 @@ b1 <- b+theme_bw()+theme(axis.text=element_text(face='bold', size=20),
                          axis.text.x=element_text(face='bold',size=20)
                          ,axis.title.x=element_text(face='bold', size=20),
                          axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  labs(x="Time of the day", y="Ground temperature (캜)")+
+  labs(x="Time of the day", y="Ground temperature (째C)")+
   scale_y_continuous(limits = c(30, 45))+scale_x_continuous(limits = c(8, 18), labels = c("7:30","10:00","12:30","15:00","17:30"))
 b1+theme(panel.grid.major = element_blank(),panel.grid.minor = element_blank())
 library(ggpubr)
@@ -190,7 +168,7 @@ Data2 <- read.csv(file.choose(),header=T)
 #Winter
 winter <- ggplot(Data, aes(Min_temp_for_Size, Min_temp)) + geom_boxplot(aes(fill = Min_temp_for_Object),position = position_dodge(0.9))+
   scale_x_discrete("Thermoregulatory shelter size")+
-  scale_y_continuous("Minimum ground temperature in winter (캜)")+
+  scale_y_continuous("Minimum ground temperature in winter (째C)")+
   scale_fill_manual(breaks = c("Bush", "Rock"), 
                     values=c("green", "dimgray"))
 winter
@@ -202,7 +180,7 @@ w <- winter1+ theme(legend.position = "none")
 w
 winter2 <- ggplot(Data2, aes(Max_temp_for_Size, Max_temp)) + geom_boxplot(aes(fill = Max_temp_for_Object),position = position_dodge(0.9))+
   scale_x_discrete("Thermoregulatory shelter size")+
-  scale_y_continuous("Maximum ground temperature in winter (캜)", limits = c(15,35))+
+  scale_y_continuous("Maximum ground temperature in winter (째C)", limits = c(15,35))+
   scale_fill_manual(breaks = c("Bush", "Rock"), 
                     values=c("chartreuse3", "dimgray"))
 winter2
@@ -218,7 +196,7 @@ plot(Final_winter_plot)
 #Summer
 summer <- ggplot(Data2, aes(Min_temp_for_Size, Min_temp)) + geom_boxplot(aes(fill = Min_temp_for_Object),position = position_dodge(0.9))+
   scale_x_discrete("Thermoregulatory shelter size")+
-  scale_y_continuous("Minimum ground temperature in summer (캜)")+
+  scale_y_continuous("Minimum ground temperature in summer (째C)")+
   scale_fill_manual(breaks = c("Bush", "Rock"), 
                     values=c("green", "dimgray"))
 summer
@@ -303,7 +281,7 @@ G <- ggplot(mean_data,aes(Hour_of_the_day_new,Mean_preferred_body_temperature,gr
 G
 G1 <- G+theme_bw()+theme(axis.text=element_text(face='bold', size=20), axis.text.x=element_text(face='bold',size=20)
                          ,axis.title.x=element_text(face='bold', size=20),axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  scale_y_continuous(name="Preferred body temperature (캜)")+
+  scale_y_continuous(name="Preferred body temperature (째C)")+
   scale_x_discrete(name ="Time of the day")
 G1
 G1 
@@ -326,7 +304,7 @@ p1 <- p+theme_bw()+theme(panel.grid.major = element_blank(), panel.grid.minor = 
   theme(axis.text=element_text(face='bold', size=20), axis.text.x=element_text(size=20)
         ,axis.title.x=element_text(face='bold', size=20),
         axis.title.y=element_text(face='bold', size=20,vjust = 1.5))+
-  scale_x_continuous(name="Preferred body temperature (캜)",breaks=seq(25,40,1))+
+  scale_x_continuous(name="Preferred body temperature (째C)",breaks=seq(25,40,1))+
   scale_y_continuous(name="Frequency")+scale_fill_manual(values = c("Orange","Blue"))+
   scale_color_manual(values = c("Orange","Blue"))
 p1
@@ -343,7 +321,7 @@ r1 <- r+theme_bw()+theme(panel.grid.major = element_blank(), panel.grid.minor = 
   theme(axis.text=element_text(face='bold', size=15), axis.text.x=element_text(size=15)
         ,axis.title.x=element_text(face='bold', size=15),
         axis.title.y=element_text(face='bold', size=15,vjust = 1.5))+
-  scale_x_continuous(name="ibutton Temperature (캜)",  limits = c(20,40))+
+  scale_x_continuous(name="ibutton Temperature (째C)",  limits = c(20,40))+
   scale_y_continuous(name="Frequency")+scale_color_manual(values = c("Green","gray"))+
   scale_fill_manual(values = c("Green","gray"))
 r1
