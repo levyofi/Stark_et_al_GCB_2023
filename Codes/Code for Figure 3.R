@@ -2,13 +2,8 @@ library(lubridate)
 library(ggplot2)
 library(ggpubr)
 setwd("C:/Users/gavin/Desktop/PhD/Chapter 2 -Microhabitat and Thermoregulation/Modelling Lizard's Activity Time")
-data = read.csv("specific_summer_July_days_12_6_22.csv", header = T) #Upload database (summer/winter)
-###Preparing database###
-data = data[data$Date %in% c("29/01/2022", "30/01/2022", "31/01/2022"),]
-data$dt = dmy_hm(data$round_dt)
-data$day = difftime(data$dt,dmy("06/07/2020"),units="days") 
-write.csv(data, file = paste("specific_summer_days",today(), "csv", sep="." ), row.names = FALSE)
-data_summer = read.csv("specific_summer_days.2022-06-12.csv", header = T) #Upload database (summer/winter)
+data_summer = read.csv('Data/specific_summer_days-for figure 3.csv', header = T) 
+data_winter = read.csv('Data/specific_winter_days-for figure 3.csv', header = T) 
 data_summer$microhabitat <- factor(data_summer$microhabitat, 
                             levels=c("open", "burrow", "Rock-Large",
                                      "Rock-Medium", "Rock-Small", 
@@ -76,7 +71,3 @@ Winter1+  theme(axis.line = element_line(color='black'),
 
 dev.off()
 
-figure_3 <- ggarrange(summer1, Winter1,
-                      labels = c("A", "B"),
-                      ncol = 1, nrow = 2)
-figure_3
