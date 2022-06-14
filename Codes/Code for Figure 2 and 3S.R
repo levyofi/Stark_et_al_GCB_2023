@@ -50,20 +50,20 @@ e2
 dev.off()
 ############################################Figure 2 END############################################
 
-################################Supplementary figure 2 - habitat loss scenarios################################
-Data <- read.csv(file.choose())
-#create table with proportions for activity location
-new_data <- aggregate(cbind(Proportion = Round_percentage) ~ Active_location,Data,mean)
-new_data$Proportion <- new_data$Proportion*100
+################################Supplementary figure 3s - habitat loss scenarios################################
+Data_no_bush_summer <- read.csv('Data/No_Bush_Summer_microhabitat_selection-for figure 3S.csv')
+Data_no_bush_winter <- read.csv('Data/No_Bush_Winter_microhabitat_selection-for figure 3S.csv')
+Data_no_rock_summer <- read.csv('Data/No_rock_Summer_microhabitat_selection-for figure 3S.csv')
+Data_no_rock_winter <- read.csv('Data/No_Rock_Winter_microhabitat_selection-for figure 3S.csv')
 
-tiff(file="Figure 3 for suppl-no_rock_winter.tiff", width=3500, height=2800, res=300, compression="lzw")
-p<-ggplot(data=new_data, aes(x=Active_location, y= Proportion)) +
+tiff(file="Figure 3 for suppl.tiff", width=3500, height=2800, res=300, compression="lzw")
+p<-ggplot(data=Data_no_bush_summer/Data_no_bush_winter/Data_no_rock_summer/Data_no_rock_winter, 
+          aes(x=Active_location, y= Round_Percentage)) +
   geom_bar(aes(fill=Active_location),stat="identity")+
   scale_x_discrete("Location of lizard's activity")+
-  scale_y_continuous("Percentage of time spent in location", breaks = seq(0,70,10))+
-  scale_fill_manual(values = c("gray26","orangered1",
-                               "chartreuse4","chartreuse3","chartreuse2"
-                               ))
+  scale_y_continuous("Percentage of time spent in location", breaks = seq(0,80,10))+
+  scale_fill_manual(values = c("gray26","orangered1","azure4","azure3","azure2",
+                               "chartreuse4","chartreuse3","chartreuse2"))
 p
 p1 <- p+theme_bw()+theme(axis.text=element_text(face='bold', size=22), axis.text.x=element_text(size=22)
                          ,axis.title.x=element_text(face='bold', size=22),
