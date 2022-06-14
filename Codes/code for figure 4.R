@@ -16,7 +16,7 @@ Data_summer <- filter(Data_summer, Activity == "yes")
 Data_summer$activity_Percentage <- Data_summer$activity_percentage*100
 ###Figure###   activity_Percentage/mean_activity_DE
 tiff(file="Figure 5ummer.tiff", width=3800, height=2500, res=300, compression="lzw")
-summer <- ggplot(Data_summer, aes(x=climate_change, y=mean_activity_DE))+
+summer <- ggplot(Data_summer, aes(x=climate_change, y=activity_percentage/mean_activity_DE))+
   geom_line(aes(group = habitat_loss, color=habitat_loss), size=2)
 summer
 summer1 <- summer+theme_bw() + 
@@ -49,7 +49,7 @@ Data_winter <- filter(Data_winter, Activity == "yes")
 Data_winter$activity_Percentage <- Data_winter$activity_percentage*100
 ###Figure###
 tiff(file="Figure 5 winter.tiff", width=3800, height=2500, res=300, compression="lzw")
-winter <- ggplot(Data_winter, aes(x=climate_change, y=mean_activity_DE))+
+winter <- ggplot(Data_winter, aes(x=climate_change, y=activity_percentage/mean_activity_DE))+
   geom_line(aes(group = habitat_loss, color=habitat_loss), size=2)
 winter
 winter1 <- winter+theme_bw() + 
