@@ -5,22 +5,26 @@ library(ggplot2)
 library(stringr)
 library(lubridate)
 library(data.table)
+library(fs)
 options(width=500)
 
 calculate_proportions_of_microhabitat_selection = function(input_file, Vtmin, Vtmax, Vtmean, season, climate_change, habitat_to_remove = NA){
   Data_season = read.csv(input_file)
-  #### Stage 1 - implement habitat loss if applicable
-  if (!is.na(habitat_to_remove)){
-    Data_season = Data_season[Data_season$Object!=habitat_to_remove,]
-  }
+  
+  #### Stage 1 - Convert to hourly resolution - averaging between the location id's
+  Data_season_agg_shade <- ddply(Data_season, .(round_dt, Object, Size), summarise,
+                           avg_ToShade = mean(ToShade), avg_ToBoulder = mean(iButton_Temp), avg_Tair = mean(Temperature_Avg), avg_Tsurface_open = mean(IR_Temp_Avg), avg_radiation = mean(Radiation_Avg))
+  Data_season_agg_open <- ddply(Data_season, .(round_dt), summarise, avg_ToSun = mean(ToSun))
+  Data_season_agg <- merge(Data_season_agg_shade, Data_season_agg_open, by="round_dt", all.x=T)
   #### end of stage 1
   
-  #### Stage 2 - Convert to hourly resolution - averaging between the location id's
-  Data_season_agg <- ddply(Data_season, .(round_dt, Object, Size), summarise,
-                           avg_ToSun = mean(ToSun), avg_ToShade = mean(ToShade), avg_ToBoulder = mean(iButton_Temp), avg_Tair = mean(Temperature_Avg), avg_Tsurface_open = mean(IR_Temp_Avg), avg_radiation = mean(Radiation_Avg))
+  #### Stage 2 - implement habitat loss if applicable
+  if (!is.na(habitat_to_remove)){
+    Data_season_agg = Data_season_agg[Data_season_agg$Object!=habitat_to_remove,]
+  }
   #### end of stage 2
-  
-  #### Stage 3 - Calculate the preferred microhabitat for each hour
+
+    #### Stage 3 - Calculate the preferred microhabitat for each hour
   #Check activity of lizard if it is possible in the sun 
   #by calculating the Temperature distance in the sun from Vtmean:
   #  browser()
@@ -92,7 +96,7 @@ calculate_proportions_of_microhabitat_selection = function(input_file, Vtmin, Vt
   # write results to a table - will be used for figures
   data_microhabitat$season=season
   data_microhabitat$climate_change  = climate_change
-  write.table(data_microhabitat, file = paste0("microhabitat_selection_",basename(input_file)), row.names = F, col.names = T, sep=",")
+  write.table(data_microhabitat, file = paste0("microhabitat_selection_",path_ext_remove(basename(input_file)), ifelse(is.na(habitat_to_remove), "_all_habitats", paste0("_no_", habitat_to_remove)), ".csv"), row.names = F, col.names = T, sep=",")
   data_microhabitat$one=1
   #### Stage 4 - Calculate the proportions of preference for each microhabitat 
   Data_season_prop = ddply(data_microhabitat, .(microhabitat), summarise,
@@ -124,8 +128,8 @@ get_season_results = function(Vtmin, Vtmax, Vtmean, season){
   return(rbindlist(result))
 }
 
-summer_results = get_season_results(Vtmin = 28.66, Vtmax = 37.30, Vtmean = 33.39, season = "Summer")
+summer_results = get_season_results(Vtmin = 32.4, Vtmax = 37.8, Vtmean = 35.3, season = "Summer")
 write.table(summer_results, file="Summer_microhabitat_selection.csv", row.names = F, col.names = T, sep=",")
 
-winter_results = get_season_results(Vtmin = 25.3, Vtmax = 36.3, Vtmean = 31.7, season = "Winter")
+winter_results = get_season_results(Vtmin = 28.7, Vtmax = 35.3, Vtmean = 31.7, season = "Winter")
 write.table(winter_results, file="Winter_microhabitat_selection.csv", row.names = F, col.names = T, sep=",")

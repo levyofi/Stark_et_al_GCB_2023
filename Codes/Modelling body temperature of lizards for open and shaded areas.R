@@ -76,7 +76,12 @@ calculate_To <- function(TAH, Tsurface, SWDOWN, GLW, shade, To){
 get_shade_and_open_To_for_table = function(input_file, climate_change=0){
   Data <- read.csv(input_file)
   Data <- na.omit(Data)
-  Data = Data[Data$Radiation_Avg>5,]
+  
+  #check minimum radiation for each hour
+  Data <- ddply(Data, .(round_dt), mutate, Radiation_min = min(Radiation_Avg))
+
+  #remove all hours with minimum solar radiation - night                                                    
+  Data = Data[Data$Radiation_min>5,]
   
   #set model input
   TAH <- Data$Temperature_Avg + 273.15 #air temp near vegetation - assume equals to air temperature
