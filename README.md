@@ -1,5 +1,4 @@
-# The critical role of microhabitat diversity in extreme environments
-
+# The critical role of microhabitat diversity in extreme environments and under climate change
 
 _Gavin Stark, Liang Ma, Zhi-Gao Zeng, Wei-guo Du, Ofir Levy_
 
