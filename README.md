@@ -1,4 +1,4 @@
-# All microhabitats matter: habitat loss may constrain thermoregulation in extreme environments and under future climate 
+# Cool shade and not-so-cool shade: how habitat loss may constrain thermoregulation under current and future climate 
 
 _Gavin Stark, Liang Ma, Zhi-Gao Zeng, Wei-guo Du, Ofir Levy_
 
