@@ -1,0 +1,57 @@
+ID,Binomial,Sex,Location,Latitude,Longitude,Cloacal_Body_Temperature,Time,Date,Season,SVL,TL,Tail,Mass,Bt_IR_9AM,Bt_IR_10AM,Bt_IR_11AM,Bt_IR_12AM,Bt_IR_13PM,Bt_IR_14PM,Bt_IR_15PM,Bt_IR_16PM,Bt_IR_17PM,Mean_Tpref,Comments
+GS A1,Mesalina bahaeldini,Male,Mishmar,31.380732,35.380528,27.6,7:25:00,19/05/2020,Summer,46.09,105.23,Original,2.4,33.7,38.7,40.2,36.4,34.6,37.4,37,33.2,36.2,36.37777778,NA
+GS A10,Mesalina bahaeldini,Male,Tzeelim,31.3516,35.38712,39.3,12:00:00,19/05/2020,Summer,40.32,75.04,Regenerated,1.5,37,36.4,36.1,36.3,38.9,42.5,35.1,38.8,36.2,37.47777778,NA
+GS A11,Mesalina bahaeldini,Male,Tzeelim,31.351535,35.353829,31,7:35:00,24/05/2020,Summer,44.45,73.24,Cut (original),1.8,26,26.3,31.4,40.4,41.8,37.5,37.3,37.3,41.1,35.45555556,NA
+GS A12,Mesalina bahaeldini,Female,Tzeelim,31.351456,35.359039,29.4,8:12:00,24/05/2020,Summer,45.19,73.84,Cut (original),2.1,36.8,41.7,33.7,29.7,28.9,35.5,38.5,30.3,35.9,34.55555556,NA
+GS A13,Mesalina bahaeldini,Male,Tzeelim,31.351859,35.364703,31.3,8:43:00,24/05/2020,Summer,44.08,61.47,Cut (original),2.2,28.2,27.7,29.7,42,37.9,39.5,38,37.7,40,35.63333333,NA
+GS A14,Mesalina bahaeldini,Male,Tzeelim,31.352915,35.370907,30.4,9:10:00,24/05/2020,Summer,42.52,61.83,Regenerated,1.8,37.1,27.6,37.9,35.7,39.3,37.4,33.8,38,37.3,36.01111111,NA
+GS A15,Mesalina bahaeldini,Male,Tzeelim,31.349161,35.375569,35.3,10:07:00,24/05/2020,Summer,41.47,77.93,Regenerated,1.3,32.9,34,39.2,34.4,39.6,39.4,42.2,37.3,42.1,37.9,NA
+GS A17,Mesalina bahaeldini,Female,Mishmar,31.380391,35.380379,39.3,13:45:00,24/05/2020,Summer,44.16,78.15,Regenerated,1.8,37.7,34.8,39.1,34.3,41.1,40.3,41.9,40,37.5,38.52222222,NA
+GS A18,Mesalina bahaeldini,Male,Mishmar,31.381446,35.376602,29.9,7:30:00,25/05/2020,Summer,44.81,69.92,Regenerated,2.5,33,39.5,36.3,39.5,38,37.7,39.6,37,39.5,37.78888889,NA
+GS A19,Mesalina bahaeldini,Male,Mishmar,31.382104,35.37604,32.2,7:50:00,25/05/2020,Summer,43.05,56.1,Regenerated,1.6,31.9,38.3,37.3,40.6,31,33,39.6,33,35.2,35.54444444,NA
+GS A2,Mesalina bahaeldini,Male,Mishmar,31.380691,35.278755,32,7:50:00,18/05/2020,Summer,50.72,57.1,Regenerated,2,34.1,23.7,35.7,28.6,43.7,39.1,38.2,37.1,36.4,35.17777778,NA
+GS A20,Mesalina bahaeldini,Male,Mishmar,31.381141,35.374223,33,9:40:00,25/05/2020,Summer,40.49,60.78,Cut (regenerated),1.9,30.3,33,41.8,35.9,41.8,40.1,40.1,33.3,37.3,37.06666667,NA
+GS A21,Mesalina bahaeldini,Male,Tzeelim,31.351717,35.354576,31.6,7:00:00,02/06/2020,Summer,44.18,97.2,Original,2.1,26.6,26.8,36.8,33.5,41.7,37.9,37.3,26.8,37.8,33.91111111,NA
+GS A22,Mesalina bahaeldini,Male,Tzeelim,31.351742,35.354377,32.1,7:10:00,02/06/2020,Summer,41.15,26.7,Cut (original),1.7,39.1,38.3,35.1,37.1,38.2,38.4,40.9,40,39,38.45555556,NA
+GS A23,Mesalina bahaeldini,Female,Tzeelim,31.348892,35.371911,37.2,10:10:00,02/06/2020,Summer,45.26,50.42,Cut (original),1.8,27.4,27.1,38.3,33.7,41.8,34.9,39.6,40.4,37.1,35.58888889,NA
+GS A24,Mesalina bahaeldini,Male,Tzeelim,31.351331,35.363256,38,12:00:00,09/06/2020,Summer,48.36,74.01,Regenerated,2.3,30.8,29.2,31.8,36,32.4,33.1,30.6,32.1,34.2,32.24444444,NA
+GS A25,Mesalina bahaeldini,Male,Tzeelim,31.351149,35.358654,29.3,6:50:00,10/06/2020,Summer,39.85,60.4,Regenerated,1.5,34,36.4,36.1,34.4,34.8,39.6,35.4,36,41.5,36.46666667,NA
+GS A26,Mesalina bahaeldini,Male,Tzeelim,31.350523,35.366498,31,7:25:00,10/06/2020,Summer,41.97,89.35,Original,1.8,31.6,34.8,32.3,29.6,29.6,36.2,36.3,31.8,34.5,32.96666667,NA
+GS A27,Mesalina bahaeldini,Female,Mishmar,31.381762,35.377064,38.4,18:30:00,16/06/2020,Summer,44.84,46.9,Regenerated,1.4,35.8,34.3,36.7,38.1,40.3,38.5,37.8,39.1,39,37.73333333,"young adult, ground temp: 37.3, air temp: 37"
+GS A3,Mesalina bahaeldini,Female,Mishmar,31.381756,35.374879,36.2,10:10:00,19/05/2020,Summer,44.78,76.66,Regenerated,2,36,38.6,35.6,37.7,32.2,40.3,33.5,32.7,34.9,35.72222222,NA
+GS A4,Mesalina bahaeldini,Male,Mishmar,31.381184,35.374924,31.7,7:50:00,18/05/2020,Summer,48.09,38.43,Regenerated,2.2,23.8,37.6,39.1,33.4,32.7,26.1,26.4,26.1,26.7,30.21111111,NA
+GS A5,Mesalina bahaeldini,Male,Mishmar,31.381474,35.37988,37.3,8:20:00,19/05/2020,Summer,44.55,81.38,Regenerated,2.4,32.7,35.3,26,31.9,34.7,27,33.6,33.9,37.7,32.53333333,NA
+GS A6,Mesalina bahaeldini,Male,Tzeelim,31.3522898,35.352975,36.5,8:50:00,18/05/2020,Summer,42.15,65.77,Regenerated,1.8,24.3,23.4,34.9,31.6,33.1,37.4,35.2,37.5,37.1,32.72222222,NA
+GS A7,Mesalina bahaeldini,Female,Tzeelim,31.353291,35.354649,36.7,9:10:00,19/05/2020,Summer,45.85,81.01,Original,2,38.3,35.4,37.2,33.1,35.5,37.9,38.6,36.8,38.3,36.78888889,NA
+GS A8,Mesalina bahaeldini,Male,Tzeelim,31.354021,35.367666,38.3,9:45:00,18/05/2020,Summer,40.71,61.2,Regenerated,1.7,32.2,32.3,34.8,40.5,35,37.4,37.6,32.4,37,35.46666667,NA
+GS A9,Mesalina bahaeldini,Female,Tzeelim,31.350632,35.370358,37.3,10:20:00,18/05/2020,Summer,45.3,44.41,Cut,1.5,24.1,22,25.2,24.2,35.2,36,29.8,39,36.5,30.22222222,NA
+GS B1,Mesalina bahaeldini,Male,Tzeelim,NA,NA,32.2,16:00:00,29/11/2020,Winter,42.64,82.14,Original,1.5,34,33.8,30.6,34,36.6,34.6,36.1,25.4,24.5,32.17777778,in the last hour stayed under the rock
+GS B2,Mesalina bahaeldini,Male,Tzeelim,NA,NA,28.7,16:30:00,29/11/2020,Winter,44.17,93.22,Original,1.7,27.9,23.1,35.8,35.5,33.9,25.3,24.1,39.7,25.6,30.1,in the last hour stayed under the rock
+GS B3,Mesalina bahaeldini,Male,Tzeelim,31.347258,35.372834,30.3,9:22:00,30/11/2020,Winter,41.91,83.25,Original,1.5,35,33.7,29.4,34.8,37.4,24.1,35,34.8,33.2,33.04444444,escaped at 11AM and placed back after 5 minutes
+GS B4,Mesalina bahaeldini,Male,Tzeelim,31.347594,35.372215,32.8,9:39:00,30/11/2020,Winter,43.65,97.46,Original,1.8,27.2,29.9,33.4,29.7,32.8,35.4,34.6,37.6,35,32.84444444,NA
+GS B5,Mesalina bahaeldini,Female,Tzeelim,31.347582,35.372202,31.8,10:00:00,30/11/2020,Winter,39.11,67.59,Regenerated,1.3,31.2,32.8,26.6,36.2,39.9,33.4,32.4,35,23.9,32.37777778,in the last hour stayed under the rock
+GS B6,Mesalina bahaeldini,Female,Mishmar,31.380827,35.375118,30.3,10:32:00,30/11/2020,Winter,37.02,75.53,Original,1,23.7,37.6,38.9,35.8,33.6,37.1,36.2,37.7,34.1,34.96666667,NA
+GS B7,Mesalina bahaeldini,Female,Mishmar,31.382521,35.373823,33.3,10:55:00,30/11/2020,Winter,43.29,74.61,Regenerated,1.6,29.1,35.8,22.9,34.5,23.7,34.7,24.7,24.5,24.5,28.26666667,in the last two hours stayed under the rock
+GS B8,Mesalina bahaeldini,Male,Mishmar,31.382466,35.373604,32,11:07:00,30/11/2020,Winter,41.09,64.9,Regenerated,1.7,38,34.3,34,31.4,34,36,30.7,24.7,25.1,32.02222222,in the last two hours stayed under the rock
+GS B9,Mesalina bahaeldini,Male,Mishmar,31.381984,35.371281,30.4,11:49:00,30/11/2020,Winter,39.31,54.34,Regenerated,1.2,23.9,28,34,32,38.8,37,36.1,34.1,24,31.98888889,in the last hour stayed under the rock
+GS B10,Mesalina bahaeldini,Male,Mishmar,31.380614,35.37023,31.5,13:01:00,30/11/2020,Winter,38.67,63.27,Regenerated,1.3,28.7,31.5,36.3,32.1,23.3,24.4,35.1,23.7,24.5,28.84444444,escaped at 14AM and placed back after 1 minute; in the last two hours stayed under the rock
+GS B11,Mesalina bahaeldini,Male,Mishmar,31.381706,35.374386,28.8,13:31:00,06/12/2020,Winter,44.13,83.78,Original,1.4,32.5,35.2,33.6,38.2,32.4,36.7,32.8,42.6,33.4,35.26666667,NA
+GS B12,Mesalina bahaeldini,Male,Mishmar,31.3822,35.369845,29.3,14:15:00,06/12/2020,Winter,40.18,40.97,Regenerated,1.2,35.1,35,39.5,35.8,33.6,37.5,35,38.4,37.2,36.34444444,NA
+GS B13,Mesalina bahaeldini,Male,Mishmar,31.382091,35.369192,30.4,14:33:00,06/12/2020,Winter,40.32,81.62,Original,1.1,23.7,23.8,36.1,29.4,35.6,38.5,35.4,35.9,37,32.82222222,on rock basking at 12 PM
+GS B14,Mesalina bahaeldini,Male,Mishmar,31.382037,35.368721,30.2,14:44:00,06/12/2020,Winter,40.06,19.1,Cut,0.9,31.2,32.6,34.1,30.2,36.6,24.9,25,26.4,25.4,29.6,escaped at 13AM and placed back after 1 minute; in the last 4 hours stayed under the rock
+GS B15,Mesalina bahaeldini,Male,Mishmar,31.382084,35.37005,27.9,15:07:00,06/12/2020,Winter,40.5,50.3,Regenerated,0.7,35.3,35.9,36.4,35.1,35.6,33.9,33.3,36.3,35.8,35.28888889,NA
+GS B16,Mesalina bahaeldini,Male,Mishmar,31.380688,35.36793,24,9:16:00,07/12/2020,Winter,41.89,67.63,Regenerated,1.2,31.4,24.8,25.8,34.9,35,28.3,36.1,36.3,28.3,31.21111111,NA
+GS B17,Mesalina bahaeldini,Male,Mishmar,31.382347,35.367044,27.4,13:30:00,07/12/2020,Winter,41.03,82.5,Original,1.3,23.4,35.4,38.3,39.8,24.7,24.7,24.8,24.6,24.9,28.95555556,"stayed under the rock in 9AM, 13-17PM"
+GS B18,Mesalina bahaeldini,Male,Mishmar,31.382865,35.373306,28.6,14:24:00,07/12/2020,Winter,43.79,74.88,Original,1.7,23.9,24.2,24.1,27.9,24.7,25.6,26,25.6,25.9,25.32222222,"stayed under the rock between 9AM-17PM, with the exception of 12PM"
+GS B19,Mesalina bahaeldini,Male,Mishmar,31.382132,35.374921,30.1,14:42:00,07/12/2020,Winter,41.27,53.17,Regenerated,1.1,36.4,35.9,36.3,24,24.8,37.4,36.9,24.8,24.8,31.25555556,stayed under the rock between 12-13PM and 16-17PM
+GS B20,Mesalina bahaeldini,Male,Mishmar,31.38193,35.374415,28.2,14:58:00,07/12/2020,Winter,43.2,72.92,Original,1.6,34.6,33.8,31,35.8,36.8,34.9,24.7,24,24.3,31.1,stayed under the rock between 15-17PM
+GS B21,Mesalina bahaeldini,Female,Tzeelim,31.352468,35.358245,30.3,12:44:00,20/12/2020,Winter,44.04,87.52,Original,1.3,23.8,35.6,34.7,38.4,34.7,23.6,24.3,25.1,37.4,30.84444444,stayed under the rock between 14-16PM
+GS B22,Mesalina bahaeldini,Female,Tzeelim,31.352464,35.358241,31.9,14:49:00,20/12/2020,Winter,43.66,87.36,Original,1.9,32.9,34.2,32.5,27.2,35.1,36.9,31.8,24.6,24.3,31.05555556,in the last two hours stayed under the rock
+GS B23,Mesalina bahaeldini,Male,Tzeelim,31.352364,35.360933,31.4,13:18:00,20/12/2020,Winter,46.02,93.43,Original,1.9,29.9,39.1,35.1,36.9,36.4,34.8,35.8,36.3,35.6,35.54444444,NA
+GS B24,Mesalina bahaeldini,Female,Tzeelim,31.351941,35.359811,31,13:30:00,20/12/2020,Winter,46.36,88.46,Original,2,22.8,23.7,25.3,27.5,34.4,36.8,27.1,24.2,24.9,27.41111111,"stayed under the rock at 9AM, 11AM, 12PM, and between 15-17 PM"
+GS B25,Mesalina bahaeldini,Male,Tzeelim,31.352011,35.359523,32.5,13:37:00,20/12/2020,Winter,46.29,67.09,Original (cut at tip),2.3,32.9,27.2,30.5,26.2,31.1,36.7,26.6,23.7,23.9,28.75555556,escaped at 10AM and 11AM and placed back after 3 minutes; stayed under the rock between 15-17PM
+GS B26,Mesalina bahaeldini,Male,Tzeelim,31.351923,35.358573,29.9,13:50:00,20/12/2020,Winter,42.71,93.03,Original,1.7,32.7,38,33.8,30.6,38.8,36.1,34.5,36.3,33.3,34.9,NA
+GS B27,Mesalina bahaeldini,Male,Tzeelim,31.352374,35.358291,33.7,14:06:00,20/12/2020,Winter,44.44,72.22,Original,1.8,24.2,36.2,25.1,35.1,34.5,34.4,35.9,32.5,37.9,32.86666667,stayed on rock at 11AM
+GS B28,Mesalina bahaeldini,Female,Tzeelim,31.352225,35.358126,31.6,14:12:00,20/12/2020,Winter,38.13,74.69,Original,1.4,24.6,32.3,33.9,35.5,35.1,35.4,37.1,27.3,23.7,31.65555556,in the last two hours stayed under the rock
+GS B29,Mesalina bahaeldini,Male,Tzeelim,31.352221,35.358122,29.4,14:20:00,20/12/2020,Winter,44.11,61.23,Regenerated,1.9,34.1,33.3,35.2,37.2,35.1,35.7,35.1,23.3,24,32.55555556,in the last two hours stayed under the rock
+GS B30,Mesalina bahaeldini,Female,Tzeelim,31.352754,35.362387,31.9,14:47:00,20/12/2020,Winter,40.12,35.66,Regenerated,1.3,34.4,30.9,35,33.5,36.3,36.7,34.1,23.6,23.9,32.04444444,in the last two hours stayed under the rock
