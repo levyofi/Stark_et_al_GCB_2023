@@ -4,9 +4,8 @@ library(plyr)
 library(magrittr)
 library(ggpubr)
 
+### Summer
 #calculate Tpref per hour 
-tpref = read.csv("Stark_et_al_ELE/Data/Tpref data for Figure 1.csv")
-
 Data_summer <- read.csv("Stark_et_al_ELE/Data/Summer microclimate fieldata.csv")
 Data_summer$round_dt = ymd_hms(Data_summer$round_dt)
 #aggregate across all ids
@@ -68,6 +67,7 @@ b = ggplot() +
   geom_point(data = tpref_mean, aes(hr, Tpref), color="purple", size=2) +
   labs(tag='Summer')
 
+### Winter
 Data_winter <- read.csv("Stark_et_al_ELE/Data/Winter microclimate fieldata.csv")
 Data_winter$round_dt = ymd_hms(Data_winter$round_dt)
 #aggregate across all ids
@@ -114,12 +114,6 @@ c = ggplot() + xlim(7.5, 18.5) + ylim(10, 55) +
   scale_y_continuous(name="Temperature (°C)", limits = c(10, 55))+
   geom_point(data = tpref, aes(hr_jitter, Tpref), colour="blue", size = 0.7)+
   geom_point(data = tpref_mean, aes(hr, Tpref), color="purple", size=2) 
-  #guides(colour = guide_legend(title = "Preferred body temperature", nrow = 1, title.hjust = 0.5 ))+ 
-  #scale_color_manual(                     labels = c("Raw", "Mean"),
-  #                   values = c("blue","purple"))
-  
-  
-
 
 c
 
@@ -137,8 +131,8 @@ d = ggplot() +
   geom_point(data = tpref_mean, aes(hr, Tpref), color="purple", size=2) +
   labs(tag='Winter')
 
+### put everything together
 library(ggpubr)
-
 both_habitats = rbind(sub_model_rock_winter, sub_model_bush_winter)
 both_habitats$microhabitat = ifelse(both_habitats$Object!="Open", paste(both_habitats$Object, both_habitats$Size, sep="-"), "Open")
 p = ggplot() +
