@@ -7,3 +7,4 @@
 - `Summer station data.csv` and `Winter station data.csv` : The raw data files from the meteorological station
 - `Winter ground temperature.csv` and `Summer ground temperatures.csv` : The raw data files of ground temperature from the ibuttons
 - `Summer microclimate fieldata.csv` and `Winter microclimate fieldata.csv` : The combined ground temperatures of each microhabitat and the corresponding meteorological data used in our biophysical model
+- `Raw Tpref from Lab and Field Database.csv` : The raw data file with field and laboratory measurements of lizards field body temperature and laboratory preferred temperatures, respectively. 
