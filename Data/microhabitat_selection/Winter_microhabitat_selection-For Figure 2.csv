@@ -1,9 +1,0 @@
-Active_location,avg_ToSun,avg_ToShade,avg_Tsurface_open,avg_radiation,mean_de,n_hours,Round_percentage,Round_Percentage,season,habitat_loss,climate_change
-burrow,17.92670002,17.77421576,17.48145084,211.6595545,NA,404,0.724014337,72.40143369,Winter,none,0
-Vegetation-Small,27.06471495,25.05196362,25.89416667,372.675,3.780225993,1,0.001792115,0.17921147,Winter,none,0
-open,28.12988523,22.15207724,25.51458239,582.9658485,3.097883997,147,0.26344086,26.34408602,Winter,none,0
-Rock-Small,23.94777209,23.18922675,23.56125,213.4438889,6.088793582,6,0.010752688,1.075268817,Winter,none,0
-Vegetation-Large,,,,,,,NA,NA,,,
-Vegetation-Medium,,,,,,,NA,NA,,,
-Rock-Large,,,,,,,NA,NA,,,
-Rock-Medium,,,,,,,NA,NA,,,

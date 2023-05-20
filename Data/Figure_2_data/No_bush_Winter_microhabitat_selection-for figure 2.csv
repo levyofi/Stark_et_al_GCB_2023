@@ -1,0 +1,6 @@
+Active_location,avg_ToSun,avg_ToShade,avg_Tsurface_open,avg_radiation,mean_de,n_hours,Round_percentage,Round_Percentage,season,habitat_loss,climate_change
+burrow,20.33717076,18.42191891,19.40248493,301.4349415,NA,446,0.890219561,89.0219561,Winter,Bush,0
+open,30.53607127,21.62930185,27.55347475,660.1718687,1.380890787,55,0.109780439,10.9780439,Winter,Bush,0
+Rock-Large,,,,,,,0,0,,,
+Rock-Medium,,,,,,,0,0,,,
+Rock-Small,,,,,,,0,0,,,

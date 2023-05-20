@@ -23,15 +23,21 @@ for (file in future_files){
   future_bio1 = extract(rs$wc2_1, y = site, buffer=NULL)
   future_bio10 = extract(rs$wc2_10, y = site, buffer=NULL)
   future_bio11 = extract(rs$wc2_11, y = site, buffer=NULL)
-  climate_change = rbind(climate_change, data.frame(file = rs@filename,
+  climate_change = rbind(climate_change, data.frame(file = file,
                                                     bio1_annual_mean =  future_bio1 - hist_bio1,
                                                     bio10_warmest_quarter_mean = future_bio10 - hist_bio10,
                                                     bio11_coldest_quarter_mean = future_bio11 - hist_bio11))
+  print(paste(file, future_bio1, future_bio10, future_bio11))
 }
 
 #remove NaNs
 climate_change = na.omit(climate_change)
 #remove unreasonable results 
 climate_change = climate_change[-2,]
-mean_summer_change = mean(climate_change$bio10_warmest_quarter_mean) # [1] 6.43889
-mean_winter_change = mean(climate_change$bio11_coldest_quarter_mean) # [1] 4.922222
+mean_summer_change = mean(climate_change$bio10_warmest_quarter_mean) # [1] 6.477
+mean_winter_change = mean(climate_change$bio11_coldest_quarter_mean) # [1] 4.916
+
+#get models names
+models = stringr::str_remove_all(climate_change$file, "/home/ofir/Downloads//wc2.1_30s_bioc_")
+models = stringr::str_remove_all(models, "_ssp585_2081-2100.tif")
+models

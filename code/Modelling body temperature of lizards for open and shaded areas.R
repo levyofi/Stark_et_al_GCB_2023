@@ -1,6 +1,6 @@
 # Author: Ofir & Gavin
 
-library(tidyverse)
+#library(tidyverse)
 library(humidity)
 
 #### Set model parameters ####
@@ -78,11 +78,12 @@ get_shade_and_open_To_for_table = function(input_file, climate_change=0){
   Data <- na.omit(Data)
   
   #check minimum radiation for each hour
-  Data <- ddply(Data, .(round_dt), mutate, Radiation_min = min(Radiation_Avg))
+  Data <- ddply(Data, .(round_dt), mutate, Radiation_max = max(Radiation_Avg))
 
   #remove all hours with minimum solar radiation - night                                                    
-  Data = Data[Data$Radiation_min>5,]
+  Data = Data[Data$Radiation_max>5,]
   
+  #browser()
   #set model input
   TAH <- Data$Temperature_Avg + 273.15 #air temp near vegetation - assume equals to air temperature
   Tsurface <- Data$IR_Temp_Avg + 273.15 #surface temperature in the open
@@ -126,3 +127,8 @@ for (i in seq(0.5,6.5, 0.5)){
   winter_data_future = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Winter microclimate fieldata.csv", climate_change = i)
   write.table(winter_data_future, file=paste0(i,"_Winter_future_microclimate_and_operative_temperatures.csv"), row.names = F, col.names = T, sep=",")
 }
+
+#calculate for +4.9C (winter by 2100)
+i=4.9
+winter_data_future = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Winter microclimate fieldata.csv", climate_change = i)
+write.table(winter_data_future, file=paste0(i,"_Winter_future_microclimate_and_operative_temperatures.csv"), row.names = F, col.names = T, sep=",")

@@ -47,7 +47,3 @@ ibutton_meterological_cleaned = ibutton_meterological_cleaned[ibutton_meterologi
 
 # write the results to a file
 write.table(ibutton_meterological_cleaned, file=paste(Season, "microclimate fieldata.csv"), row.names = F, col.names = T, sep=",")
-
-# data sanity check - count how much data exist per microhabitat per hour - should be between 1 (if some failed or lost) to 4 (2 at each site) 
-data_per_hour = ddply(ibutton_meterological_cleaned, .(round_dt, Object, Size), summarise, n_observations = length(round_dt))
-write.table(data_per_hour, file=paste(Season, "data per microhabitat.csv"), row.names = F, col.names = T, sep=",")

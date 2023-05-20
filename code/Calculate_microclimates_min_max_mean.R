@@ -11,6 +11,7 @@ Data_winter <- read.csv('Stark_et_al_ELE/Data/Winter microclimate fieldata.csv')
 Data = rbind(Data_summer, Data_winter)
 #Create table of mean&min&max values for the raw table:
 Data$round_dt <- ymd_hms(Data$round_dt) 
+#use only daytime data - solar radiation above 5
 Data = Data[Data$Radiation_Avg>5,]
 #organize data
 #first - calculate the average across all ibuttons for every hour
@@ -37,7 +38,7 @@ Data$TIMESTAMP <- ymd_hms(Data$TIMESTAMP)
 Data$Date = date(Data$TIMESTAMP)
 agg_data = ddply(Data, .(Date, Season), summarise,
                  min_temp = min(IR_Temp_Avg), max_temp = max(IR_Temp_Avg), mean_temp = mean(IR_Temp_Avg), n=length(IR_Temp_Avg))
-#take only days with full data
+#take only days with relatively full data
 agg_data = agg_data[agg_data$n>50,]
 
 #finaly - calculate the average max, min, and mean across days
