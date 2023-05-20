@@ -15,7 +15,7 @@ Third, we calculate the preferred microhabitat for activity (where operative tem
 
 # Other files in this folder include:
 ## Analysis
-`Analysis for supplemantry lab vs field Tpref stats and figure.R` :Statistical comparison of field body temperatures and laboratory preferred temperatures. Also includes code for figure S3.
+`Comparison between lab and field body temperatures.R` :Statistical comparison of field body temperatures and laboratory preferred temperatures. Also includes code for figure S3.
 
 `Calculate_climate_change_data.R` :Code for calculating the mean increase in summer and winter temperatures by 2100 using worldclim's published global circulation models.
 
