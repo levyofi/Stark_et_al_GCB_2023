@@ -6,7 +6,7 @@ library(ggpubr)
 
 ### Summer
 #calculate Tpref per hour 
-Data_summer <- read.csv("Stark_et_al_ELE/Data/Summer microclimate fieldata.csv")
+Data_summer <- read.csv("Data/Summer microclimate fieldata.csv")
 Data_summer$round_dt = ymd_hms(Data_summer$round_dt)
 #aggregate across all ids
 shade_data = aggregate(iButton_Temp ~ round_dt+Object+Size, data = Data_summer, mean)
@@ -29,7 +29,7 @@ sub_model_bush_summer <-subset(summer_micro, Object == "Bush" | Object == "Open"
 str(sub_model_bush_summer)
 
 #calculate Tpref per hour 
-tpref = read.csv("Stark_et_al_ELE/Data/Raw Tpref from Lab and Field Database.csv")
+tpref = read.csv("Data/Raw Tpref from Lab and Field Database.csv")
 str(tpref)
 tpref = tpref[,c(10, 15:23)]
 names(tpref) = c("Season", 9:17)
@@ -68,7 +68,7 @@ b = ggplot() +
   labs(tag='Summer')
 
 ### Winter
-Data_winter <- read.csv("Stark_et_al_ELE/Data/Winter microclimate fieldata.csv")
+Data_winter <- read.csv("Data/Winter microclimate fieldata.csv")
 Data_winter$round_dt = ymd_hms(Data_winter$round_dt)
 #aggregate across all ids
 shade_data = aggregate(iButton_Temp ~ round_dt+Object+Size, data = Data_winter, mean)
@@ -91,7 +91,7 @@ sub_model_bush_winter <-subset(winter_micro, Object == "Bush" | Object == "Open"
 str(sub_model_bush_winter)
 
 #calculate Tpref per hour 
-tpref = read.csv("Stark_et_al_ELE/Data/Raw Tpref from Lab and Field Database.csv")
+tpref = read.csv("Data/Raw Tpref from Lab and Field Database.csv")
 str(tpref)
 tpref = tpref[,c(10, 15:23)]
 names(tpref) = c("Season", 9:17)

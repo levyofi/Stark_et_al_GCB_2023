@@ -7,7 +7,7 @@ xlabels = ifelse(xbreaks%%2, "", xbreaks)
 ybreaks = seq(0, 100, by = 10)
 ylabels = ifelse(ybreaks%%20, "", ybreaks)
 
-summer = read.csv("Stark_et_al_GCB_revision/Data/microhabitat_selection/Summer_microhabitat_selection.csv")
+summer = read.csv("Data/microhabitat_selection/Summer_microhabitat_selection.csv")
 summer$Active_location = factor(summer$Active_location,
                                 levels = c("Bush-Small", "Bush-Medium", "Bush-Large","Rock-Small", "Rock-Medium", "Rock-Large", "open", "burrow"),
                                 labels = c("Small Bush", "Medium Bush", "Large Bush", "Small Rock", "Medium Rock", "Large Rock", "Open", "Burrow") )
@@ -15,7 +15,7 @@ summer$Round_Percentage = summer$Round_percentage * 100
 data_summer_no_loss <- summer[summer$habitat_loss=="none",]
 data_summer_no_bush <- summer[summer$habitat_loss=="Bush",]
 data_summer_no_rock <- summer[summer$habitat_loss=="Rock",]
-winter = read.csv("Stark_et_al_GCB_revision/Data/microhabitat_selection/Winter_microhabitat_selection.csv")
+winter = read.csv("Data/microhabitat_selection/Winter_microhabitat_selection.csv")
 winter$Active_location = factor(winter$Active_location,
                                 levels = c("Bush-Small", "Bush-Medium", "Bush-Large","Rock-Small", "Rock-Medium", "Rock-Large", "open", "burrow"),
                                 labels = c("Small Bush", "Medium Bush", "Large Bush", "Small Rock", "Medium Rock", "Large Rock", "Open", "Burrow") )

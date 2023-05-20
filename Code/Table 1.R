@@ -6,7 +6,7 @@ library(data.table)
 #Current climate
 
 get_DF = function(file, season, scenario){
-  data = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+  data = read.csv(paste0("Data/microhabitat_selection/",file))
   data$belowTpref = ifelse(data$df>0, "above", "below")
   data = data[!is.na(data$df),]
   mean_and_sd = data %>% 

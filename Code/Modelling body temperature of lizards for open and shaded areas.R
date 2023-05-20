@@ -115,20 +115,20 @@ get_shade_and_open_To_for_table = function(input_file, climate_change=0){
 }
 
 
-summer_data_current = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Summer microclimate fieldata.csv")
+summer_data_current = get_shade_and_open_To_for_table(input_file = "Data/Summer microclimate fieldata.csv")
 write.table(summer_data_current, file="Summer_current_microclimate_and_operative_temperatures.csv", row.names = F, col.names = T, sep=",")
 
-winter_data_current = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Winter microclimate fieldata.csv")
+winter_data_current = get_shade_and_open_To_for_table(input_file = "Data/Winter microclimate fieldata.csv")
 write.table(winter_data_current, file="Winter_current_microclimate_and_operative_temperatures.csv", row.names = F, col.names = T, sep=",")
 
 for (i in seq(0.5,6.5, 0.5)){
-  summer_data_future = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Summer microclimate fieldata.csv", climate_change = i)
+  summer_data_future = get_shade_and_open_To_for_table(input_file = "Data/Summer microclimate fieldata.csv", climate_change = i)
   write.table(summer_data_future, file=paste0(i,"_Summer_future_microclimate_and_operative_temperatures.csv"), row.names = F, col.names = T, sep=",")
-  winter_data_future = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Winter microclimate fieldata.csv", climate_change = i)
+  winter_data_future = get_shade_and_open_To_for_table(input_file = "Data/Winter microclimate fieldata.csv", climate_change = i)
   write.table(winter_data_future, file=paste0(i,"_Winter_future_microclimate_and_operative_temperatures.csv"), row.names = F, col.names = T, sep=",")
 }
 
 #calculate for +4.9C (winter by 2100)
 i=4.9
-winter_data_future = get_shade_and_open_To_for_table(input_file = "Stark_et_al_ELE/Data/Winter microclimate fieldata.csv", climate_change = i)
+winter_data_future = get_shade_and_open_To_for_table(input_file = "Data/Winter microclimate fieldata.csv", climate_change = i)
 write.table(winter_data_future, file=paste0(i,"_Winter_future_microclimate_and_operative_temperatures.csv"), row.names = F, col.names = T, sep=",")

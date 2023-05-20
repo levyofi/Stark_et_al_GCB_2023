@@ -12,7 +12,7 @@ meterological_file = paste(Season, "station data.csv")
 
 
 # read ibuttons data and fix the am-pm problem in the ibutton dataset (happens if data is saved in excel):
-ibutton = read.csv(paste0("Stark_et_al_ELE/Data/", ibutton_file))
+ibutton = read.csv(paste0("Data/", ibutton_file))
 ibutton = unique(ibutton) #making sure no lines are the same 
 with_AM = ibutton[str_detect(ibutton$Time_Date, "M"),]
 with_AM$dt = mdy_hms(with_AM$Time_Date)
@@ -22,7 +22,7 @@ fixed_ibutton = rbind(with_AM, without_AM)
 fixed_ibutton = fixed_ibutton[order(fixed_ibutton$dt),]
 
 # read meteorological data
-meterological_data <- read.csv(paste0("Stark_et_al_ELE/Data/", meterological_file), sep=",", header = T)
+meterological_data <- read.csv(paste0("Data/", meterological_file), sep=",", header = T)
 meterological_data$dt <- ymd_hms(meterological_data$TIMESTAMP)
 
 #merge the tables based on time:

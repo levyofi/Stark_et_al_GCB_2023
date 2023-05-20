@@ -25,11 +25,11 @@ get_weighted_means = function(Data){
 
 
 ###Summer###
-Data <- read.csv('Stark_et_al_GCB_revision/Data/microhabitat_selection/Summer_microhabitat_selection.csv')
+Data <- read.csv('Data/microhabitat_selection/Summer_microhabitat_selection.csv')
 Data_summer = get_weighted_means(Data)
 
 ###Winter###
-Data <- read.csv('Stark_et_al_GCB_revision/Data/microhabitat_selection/Winter_microhabitat_selection.csv')
+Data <- read.csv('Data/microhabitat_selection/Winter_microhabitat_selection.csv')
 Data_winter = get_weighted_means(Data)
 
 #### end of data for panels A and B ####
@@ -37,7 +37,7 @@ Data_winter = get_weighted_means(Data)
 
 #### data for panels C to F
 get_DF = function(file, season, scenario){
-  data = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+  data = read.csv(paste0("Data/microhabitat_selection/",file))
   #browser()
   data$belowTpref = as.factor(ifelse(data$df>0, "above", "below"))
   data = data[!is.na(data$df),]

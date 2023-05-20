@@ -8,13 +8,13 @@ library(data.table)
 breaks = seq(0, 0.45, 0.05)
 labels = breaks*100
 file = "microhabitat_selection_Summer_current_microclimate_and_operative_temperatures_all_habitats.csv"
-summer_all = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_all = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_all$scenario = "all"
 file = "microhabitat_selection_Summer_current_microclimate_and_operative_temperatures_no_Bush.csv"
-summer_no_bush = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_no_bush = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_no_bush$scenario = "no bush"
 file = "microhabitat_selection_Summer_current_microclimate_and_operative_temperatures_no_Rock.csv"
-summer_no_rock = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_no_rock = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_no_rock$scenario = "no rock"
 
 p_summer_current = ggplot() + 
@@ -33,13 +33,13 @@ p_summer_current = ggplot() +
 # # geom_histogram( alpha=0.6, binwidth = 0.2, aes(y = ..density..), position ="identity") + 
 
 file = "microhabitat_selection_6.5_Summer_future_microclimate_and_operative_temperatures_all_habitats.csv"
-summer_all = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_all = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_all$scenario = "all"
 file = "microhabitat_selection_6.5_Summer_future_microclimate_and_operative_temperatures_no_Bush.csv"
-summer_no_bush = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_no_bush = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_no_bush$scenario = "no bush"
 file = "microhabitat_selection_6.5_Summer_future_microclimate_and_operative_temperatures_no_Rock.csv"
-summer_no_rock = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+summer_no_rock = read.csv(paste0("Data/microhabitat_selection/",file))
 summer_no_rock$scenario = "no rock"
 
 p_summer_future = ggplot() + 
@@ -60,13 +60,13 @@ p_summer_future = ggplot() +
 # # geom_histogram( alpha=0.6, binwidth = 0.2, aes(y = ..density..), position ="identity") + 
 # 
 file = "microhabitat_selection_Winter_current_microclimate_and_operative_temperatures_all_habitats.csv"
-Winter_all = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_all = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_all$scenario = "all"
 file = "microhabitat_selection_Winter_current_microclimate_and_operative_temperatures_no_Bush.csv"
-Winter_no_bush = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_no_bush = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_no_bush$scenario = "no bush"
 file = "microhabitat_selection_Winter_current_microclimate_and_operative_temperatures_no_Rock.csv"
-Winter_no_rock = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_no_rock = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_no_rock$scenario = "no rock"
 
 p_winter_current = ggplot() + 
@@ -88,13 +88,13 @@ p_winter_current = ggplot() +
 # 
 
 file = "microhabitat_selection_4.9_Winter_future_microclimate_and_operative_temperatures_all_habitats.csv"
-Winter_all = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_all = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_all$scenario = "all"
 file = "microhabitat_selection_4.9_Winter_future_microclimate_and_operative_temperatures_no_Bush.csv"
-Winter_no_bush = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_no_bush = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_no_bush$scenario = "no bush"
 file = "microhabitat_selection_4.9_Winter_future_microclimate_and_operative_temperatures_no_Rock.csv"
-Winter_no_rock = read.csv(paste0("Stark_et_al_GCB_revision/Data/microhabitat_selection/",file))
+Winter_no_rock = read.csv(paste0("Data/microhabitat_selection/",file))
 Winter_no_rock$scenario = "no rock"
 
 p_winter_future =ggplot() + 

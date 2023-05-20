@@ -7,14 +7,14 @@ site <- SpatialPoints(matrix(c(lon,lat), ncol=2), proj4string = CRS("+proj=longl
 
 # get historical data
 # load the raster
-historical_file_bio1 = raster("/home/ofir/Downloads/wc2.1_30s_bio_1.tif")
-historical_file_bio10 = raster("/home/ofir/Downloads/wc2.1_30s_bio_10.tif")
-historical_file_bio11 = raster("/home/ofir/Downloads/wc2.1_30s_bio_11.tif")
+historical_file_bio1 = raster("wc2.1_30s_bio_1.tif")
+historical_file_bio10 = raster("wc2.1_30s_bio_10.tif")
+historical_file_bio11 = raster("wc2.1_30s_bio_11.tif")
 hist_bio1 = extract(historical_file_bio1, y = site, buffer=NULL)
 hist_bio10 = extract(historical_file_bio10, y = site, buffer=NULL)
 hist_bio11 = extract(historical_file_bio11, y = site, buffer=NULL)
 
-future_files = dir(path="/home/ofir/Downloads/", pattern="wc2.+2100\\.tif", full.names =T)
+future_files = dir(path="", pattern="wc2.+2100\\.tif", full.names =T)
 
 climate_change = data.frame(file = character(0), bio1_annual_mean = numeric(0), bio10_warmest_quarter_mean = numeric(0), bio11_coldest_quarter_mean = numeric(0))
 
@@ -38,6 +38,6 @@ mean_summer_change = mean(climate_change$bio10_warmest_quarter_mean) # [1] 6.477
 mean_winter_change = mean(climate_change$bio11_coldest_quarter_mean) # [1] 4.916
 
 #get models names
-models = stringr::str_remove_all(climate_change$file, "/home/ofir/Downloads//wc2.1_30s_bioc_")
+models = stringr::str_remove_all(climate_change$file, "wc2.1_30s_bioc_")
 models = stringr::str_remove_all(models, "_ssp585_2081-2100.tif")
 models

@@ -11,7 +11,7 @@ plot_hourly = function(file, panel_letter, light=5, dark=19, mar=c(0,1,0,1), leg
   #light=5;dark=20
   #browser()
   #file = "microhabitat_selection_3_Summer_future_microclimate_and_operative_temperatures_all_habitats.csv"
-  Data = read.csv(paste0("Stark_et_al_GCB_revision//Data/microhabitat_selection/",file))
+  Data = read.csv(paste0("Data/microhabitat_selection/",file))
   #Data = Data[!is.na(Data$de),]
   Data$round_dt = ymd_hms(Data$round_dt)
   Data$hour = hour(Data$round_dt)
@@ -32,7 +32,6 @@ plot_hourly = function(file, panel_letter, light=5, dark=19, mar=c(0,1,0,1), leg
   
   Data_summary = merge(Data_summary, colors_table, by="microhabitat", x.all=T)                      
   Data_summary$microhabitat = factor(Data_summary$microhabitat, levels = c("burrow", "open", "Bush-Small", "Bush-Medium", "Bush-Large", "Rock-Small", "Rock-Medium", "Rock-Large"), ordered = T)
-  #Data_summary = Data_summary[Data_summary$microhabitat!="burrow",]
   p = ggplot(Data_summary, aes(hour, freq,  fill = microhabitat)) +
     geom_bar(stat = 'identity') +
     scale_fill_manual(values = c("Bush-Small"="chartreuse2","Bush-Medium"="chartreuse3","Bush-Large"="chartreuse4","Rock-Small"="azure2",
@@ -115,7 +114,7 @@ winter = annotate_figure(winter, left = textGrob("Proportion of activity (%)", r
 
 winter
 
-tiff(filename = "Figure 3 rev2.tiff", width=2500, height = 3200, compression = "lzw", res=300)
+tiff(filename = "Figure 3.tiff", width=2500, height = 3200, compression = "lzw", res=300)
 all = ggarrange(summer, winter, ncol = 1, nrow = 2, common.legend = T, legend.grob = color_legend, legend="top") +
   theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))
 all

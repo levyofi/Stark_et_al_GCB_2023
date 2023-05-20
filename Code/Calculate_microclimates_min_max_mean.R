@@ -6,8 +6,8 @@ options(scipen = 999)
 
 
 #rocks and bushes
-Data_summer <- read.csv('Stark_et_al_ELE/Data/Summer microclimate fieldata.csv')
-Data_winter <- read.csv('Stark_et_al_ELE/Data/Winter microclimate fieldata.csv')
+Data_summer <- read.csv('Data/Summer microclimate fieldata.csv')
+Data_winter <- read.csv('Data/Winter microclimate fieldata.csv')
 Data = rbind(Data_summer, Data_winter)
 #Create table of mean&min&max values for the raw table:
 Data$round_dt <- ymd_hms(Data$round_dt) 
@@ -25,9 +25,9 @@ mean_sd_shade =  ddply(agg_data, .(Object,Size,Season), summarise,
                               min = mean(min_temp), max = mean(max_temp), mean = mean(mean_temp), sd_min = sd(min_temp), sd_max = sd(max_temp), sd_mean = sd(mean_temp))
 
 ##Stats for open field temps
-Data_summer <- read.csv('Stark_et_al_ELE/Data/Summer station data.csv')
+Data_summer <- read.csv('Data/Summer station data.csv')
 Data_summer$Season="Summer"
-Data_winter <- read.csv('Stark_et_al_ELE/Data/Winter station data.csv')
+Data_winter <- read.csv('Data/Winter station data.csv')
 Data_winter$Season="Winter"
 Data = rbind(Data_summer, Data_winter)
 Data = Data[Data$Radiation_Avg>5 & (!is.nan(Data$IR_Temp_Avg)),]

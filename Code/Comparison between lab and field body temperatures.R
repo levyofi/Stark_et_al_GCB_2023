@@ -1,6 +1,6 @@
 library(nlme)
 options(scipen = 999)
-Data <- read.csv("../Stark_et_al_ELE/Data/Data of TPref and field body temperatures.txt")
+Data <- read.csv("Data/Data of TPref and field body temperatures.txt")
 quantile(Data[Data$Temp_Origin=="Lab" & Data$Season=="Summer",]$Body_Temperature)
 # 0%      25%      50%      75%     100% 
 # 30.21111 34.07222 35.61111 36.99722 38.52222 

@@ -126,9 +126,9 @@ get_file_results = function(input_file, Vtmin, Vtmax, Vtmean, season, climate_ch
 
 get_season_results = function(Vtmin, Vtmax, Vtmean, season){
   result = list()
-  result[["current"]] = get_file_results(paste0("Stark_et_al_GCB_revision/Data/operative_temperatures/", season,"_current_microclimate_and_operative_temperatures.csv"), Vtmin, Vtmax, Vtmean, season, 0)
+  result[["current"]] = get_file_results(paste0("Data/operative_temperatures/", season,"_current_microclimate_and_operative_temperatures.csv"), Vtmin, Vtmax, Vtmean, season, 0)
   for (i in seq(0.5,6.5, 0.5)){
-    result[[paste("change",i)]] = get_file_results(paste0("Stark_et_al_GCB_revision/Data/operative_temperatures/", paste(i, season, "future_microclimate_and_operative_temperatures.csv", sep="_")), Vtmin, Vtmax, Vtmean, season, i)
+    result[[paste("change",i)]] = get_file_results(paste0("Data/operative_temperatures/", paste(i, season, "future_microclimate_and_operative_temperatures.csv", sep="_")), Vtmin, Vtmax, Vtmean, season, i)
   }
   return(rbindlist(result))
 }
@@ -140,7 +140,7 @@ winter_results = get_season_results(Vtmin = 28.7, Vtmax = 35.3, Vtmean = 31.7, s
 write.table(winter_results, file="Winter_microhabitat_selection.csv", row.names = F, col.names = T, sep=",")
 
 get_season_results_winter_4.9 = function(Vtmin, Vtmax, Vtmean, season){
-    result = get_file_results("Stark_et_al_GCB_revision/Data/operative_temperatures/4.9_Winter_future_microclimate_and_operative_temperatures.csv", Vtmin, Vtmax, Vtmean, "winter", 4.9)
+    result = get_file_results("Data/operative_temperatures/4.9_Winter_future_microclimate_and_operative_temperatures.csv", Vtmin, Vtmax, Vtmean, "winter", 4.9)
 }
 
 r = get_season_results_winter_4.9(Vtmin = 28.7, Vtmax = 35.3, Vtmean = 31.7, season = "Winter")
