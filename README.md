@@ -13,4 +13,4 @@ Worldwide habitat loss, land-use changes, and climate change threaten biodiversi
 # **Repository Directory**:
 ## See the following subdirectory for data and metadata: [link](https://github.com/levyofi/Stark_et_al_GCB_2023/tree/main/Data).
 
-## See the following subdirectory for codes: [link](https://github.com/levyofi/Stark_et_al_GCB_2023  /tree/main/Code).
+## See the following subdirectory for codes: [link](https://github.com/levyofi/Stark_et_al_GCB_2023/tree/main/Code).
