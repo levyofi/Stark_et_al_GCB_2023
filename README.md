@@ -1,6 +1,6 @@
-# **Cool shade and not-so-cool shade: how habitat loss may accelerate thermal stress under current and future climate **
+# Cool shade and not-so-cool shade: how habitat loss may accelerate thermal stress under current and future climate
 
-## **Global Change Biology**
+## Global Change Biology
 
 _Gavin Stark, Liang Ma, Zhi-Gao Zeng, Wei-guo Du, Ofir Levy_
 
@@ -13,4 +13,4 @@ Worldwide habitat loss, land-use changes, and climate change threaten biodiversi
 # **Repository Directory**:
 ## See the following subdirectory for data and metadata: [link](https://github.com/levyofi/Stark_et_al_GCB_2023/tree/main/Data).
 
-## See the following subdirectory for codes: [link](https://github.com/levyofi/Stark_et_al_GCB_2023  /tree/main/Code).
+## See the following subdirectory for codes: [link](https://github.com/levyofi/Stark_et_al_GCB_2023/tree/main/Code).
