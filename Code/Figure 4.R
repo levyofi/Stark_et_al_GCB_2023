@@ -108,9 +108,9 @@ p_winter_future =ggplot() +
 require(grid)   # for the textGrob() function
 
 tiff("Figure 4.tif", width=3200, height = 2500, compression = "lzw", res=300)
-summer = ggarrange(p_summer_current, p_summer_future, label.y = 0.95 ,label.x = 0.15,
+summer = ggarrange(p_summer_current, p_summer_future, label.y = 0.95 ,label.x = 0.85,
           labels = c("(a)", "(b)"), ncol = 2, nrow = 1, common.legend = T) + theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))
-winter = ggarrange(p_winter_current, p_winter_future, label.y = 0.95 ,label.x = 0.15,
+winter = ggarrange(p_winter_current, p_winter_future, label.y = 0.95 ,label.x = 0.85,
                    labels = c("(c)", "(d)"), ncol = 2, nrow = 1, common.legend = T) + theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))
 all = ggarrange(summer, winter, ncol = 1, nrow = 2)+  theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))
 all = annotate_figure(all, left = textGrob("Proportion of activity (%)", rot = 90, vjust = 1, hjust = 0.5, gp = gpar(cex = 1.1), x=2),

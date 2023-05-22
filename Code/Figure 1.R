@@ -154,7 +154,7 @@ color_legend <- cowplot::get_legend(p)
 
 tiff("Figure 1.tif", width=2400, height = 1800, compression = "lzw", res=300)
 ggarrange(a, b, c, d, 
-          labels = c("(a)", "(b)", "(c)", "(d)"),
+          labels = c("(a)", "(b)", "(c)", "(d)"), label.y = 0.9 ,label.x = 0.8,
           ncol = 2, nrow = 2, legend.grob = color_legend ) +
   theme(plot.margin = margin(1,1,1,1, "cm"))
 dev.off()

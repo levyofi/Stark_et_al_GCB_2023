@@ -86,18 +86,8 @@ wlegend = plot_hourly("microhabitat_selection_4.9_Winter_future_microclimate_and
 
 color_legend <- get_legend(wlegend)
 
-tiff(filename = "Figure 3 rev2.tiff", width=2500, height = 3200, compression = "lzw", res=300)
-figure = ggarrange(s1, s2, s3, s4, s5, s6, w1, w2, w3, w4, w5, w6, 
-          labels = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"), label.y = 0.9 ,label.x = 0.9,
-          ncol = 3, nrow = 4, common.legend = T, legend.grob = color_legend, legend="top") +
-  theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))  
-  annotate_figure(figure, left = textGrob("Proportion of activity (%)", rot = 90, vjust = 1, gp = gpar(cex = 1.3), x=1),
-                bottom = textGrob("Time of day (hour)", gp = gpar(cex = 1.3), y=2),
-                right = textGrob("Current climate                     +3°C                               +6°C", hjust = 0.55, vjust = 0.8, rot = -90, gp = gpar(cex = 1.3)))
-dev.off()
-
 summer = ggarrange(s1, s2, s3, s4, s5, s6, 
-                   labels = c("(a)", "(b)", "(c)", "(d)", "(e)", "(f)"), label.y = 0.9 ,label.x = 0.9,
+                   labels = c("(a)", "(b)", "(c)", "(d)", "(e)", "(f)"), label.y = 0.9 ,label.x = 0.8,
                    ncol = 3, nrow = 2, legend=F) +
   theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))  
 summer = annotate_figure(summer, left = textGrob("Proportion of activity (%)", rot = 90, vjust = 1, gp = gpar(cex = 1.3), x=1),
@@ -105,7 +95,7 @@ summer = annotate_figure(summer, left = textGrob("Proportion of activity (%)", r
                 right = textGrob("Summer", hjust = 0.55, vjust = 0.8, rot = -90, gp = gpar(cex = 1.3)))
 summer
 winter = ggarrange(w1, w2, w3, w4, w5, w6,
-                   labels = c("(g)", "(h)", "(i)", "(j)", "(k)", "(l)"), label.y = 0.9 ,label.x = 0.9,
+                   labels = c("(g)", "(h)", "(i)", "(j)", "(k)", "(l)"), label.y = 0.9 ,label.x = 0.8,
                    ncol = 3, nrow = 2, legend=F) +
                    theme(plot.margin = margin(0.5,1,0.5,0.5, "cm"))
 winter = annotate_figure(winter, left = textGrob("Proportion of activity (%)", rot = 90, vjust = 1, gp = gpar(cex = 1.3), x=1),
